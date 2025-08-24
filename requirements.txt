@@ -1,1 +1,13 @@
+# Core libraries for NLP, deep learning, and vector search
+torch
+transformers
+sentence-transformers
+datasets
+faiss-cpu  # Use faiss-gpu if you have a CUDA-enabled GPU
 
+# Data processing and file handling
+PyMuPDF
+rank-bm25
+
+# User interface and application framework
+streamlit
