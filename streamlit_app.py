@@ -31,7 +31,37 @@ def load_rag_model():
         all_chunks.extend(chunk_text(text, chunk_size=400, overlap=50))
     
     return RAGSystem(all_chunks)
-
+def clean_and_segment_text(text: str) -> dict:
+    """
+    Cleans and segments text.
+    """
+    # Use regular expressions to clean up common artifacts
+    cleaned_text = re.sub(r'\n\s*\n', '\n\n', text)
+    cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
+    
+    segments = {
+        "Executive Summary": "",
+        "Financial Statements": "",
+        "Notes to Financial Statements": "",
+        "Management Discussion": "",
+        "Other Information": ""
+    }
+    
+    sections = re.split(r'(?i)(executive summary|financial statements|notes to financial statements|management discussion|other information)', cleaned_text)
+    
+    if len(sections) > 1:
+        for i in range(1, len(sections), 2):
+            section_title = sections[i].strip()
+            section_content = sections[i+1].strip()
+            for key in segments:
+                if key.lower() == section_title.lower():
+                    segments[key] = section_content
+                    break
+    else:
+        segments["Financial Statements"] = cleaned_text
+        
+    return segments
+    
 @st.cache_resource
 def load_ft_model():
     # Load the fine-tuned model
