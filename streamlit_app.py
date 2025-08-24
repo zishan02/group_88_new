@@ -14,9 +14,16 @@ st.markdown("This application demonstrates and compares a **Retrieval-Augmented 
 @st.cache_resource
 def load_rag_model():
     # Load and process data for RAG
-    text_2023 = extract_text_from_pdf('data/financial_statements_2023.pdf')
-    text_2024 = extract_text_from_pdf('data/financial_statements_2024.pdf')
-    full_text = text_2023 + "\n" + text_2024
+    text_2024_01 = extract_text_from_pdf('data/q1-2024.pdf')
+    text_2024_02 = extract_text_from_pdf('data/q2-2024.pdf')
+    text_2024_03 = extract_text_from_pdf('data/q3-2024.pdf')
+    text_2024_04 = extract_text_from_pdf('data/q4-2024.pdf')
+    text_2025_01 = extract_text_from_pdf('data/q1-2025.pdf')
+    text_2025_02 = extract_text_from_pdf('data/q2-2025.pdf')
+    text_2025_03 = extract_text_from_pdf('data/q3-2025.pdf')
+    text_2025_04 = extract_text_from_pdf('data/q4-2025.pdf')
+
+    full_text = text_2024_01+ "\n"+ text_2024_02+text_2024_03+ "\n"+ text_2024_04+"\n" + text_2025_01+ "\n"+ text_2025_02+"\n"+text_2025_03+ "\n"+ text_2025_04
     cleaned_data = clean_and_segment_text(full_text)
     
     all_chunks = []
