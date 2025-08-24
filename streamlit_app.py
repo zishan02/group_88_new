@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 import json
+import re
 import os
 from rag_system import RAGSystem
 from ft_system import FTSystem
