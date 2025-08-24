@@ -199,10 +199,10 @@ if __name__ == "__main__":
     # For this example, let's assume 'data/Q1-2023.pdf' and 'data/Q1-2024.pdf' exist.
     
     # Path to your financial documents
-    doc_paths = ['data/q4-2025', 'data/q3-2025','data/q2-2025', 'data/q1-2025','data/q4-2024', 'data/q3-2024','data/q2-2024', 'data/q1-2024']
+    pdf_path = ['data/q4-2025', 'data/q3-2025','data/q2-2025', 'data/q1-2025','data/q4-2024', 'data/q3-2024','data/q2-2024', 'data/q1-2024']
     
     # Process the documents and get the final chunks
-    final_chunks = process_all_data(doc_paths)
+    final_chunks = process_all_data(pdf_path)
     
     if final_chunks:
         print("\nFirst 3 chunks generated for your RAG system:")
