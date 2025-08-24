@@ -5,16 +5,7 @@ import os
 from rag_system import RAGSystem
 from ft_system import FTSystem
 from data_preprocessing import clean_and_segment_text, extract_text_from_pdf, chunk_text
-# Cell 1
-!pip install torch transformers sentence-transformers
-# Cell 2
-!pip install PyMuPDF
-# Cell 3
-!pip install faiss-cpu
-# Cell 4
-!pip install rank-bm25
-# Cell 5
-!pip install streamlit
+
 st.set_page_config(page_title="RAG vs. Fine-Tuned Chatbot", layout="wide")
 
 st.title("Financial Q&A System: RAG vs. Fine-Tuning")
