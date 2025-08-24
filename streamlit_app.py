@@ -5,7 +5,7 @@ import os
 from rag_system import RAGSystem
 from ft_system import FTSystem
 from data_preprocessing import clean_and_segment_text, extract_text_from_pdf, chunk_text
-pip install faiss-cpu
+!pip install faiss-cpu
 
 st.set_page_config(page_title="RAG vs. Fine-Tuned Chatbot", layout="wide")
 
