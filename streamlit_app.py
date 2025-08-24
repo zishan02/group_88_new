@@ -5,7 +5,7 @@ import os
 from rag_system import RAGSystem
 from ft_system import FTSystem
 from data_preprocessing import clean_and_segment_text, extract_text_from_pdf, chunk_text
-
+!pip install datasets --upgrade
 st.set_page_config(page_title="RAG vs. Fine-Tuned Chatbot", layout="wide")
 
 st.title("Financial Q&A System: RAG vs. Fine-Tuning")
