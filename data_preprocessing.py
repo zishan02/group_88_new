@@ -2,6 +2,8 @@ import fitz  # PyMuPDF
 import re
 import json
 import torch
+import os
+
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 def extract_text_from_pdf(pdf_path):
