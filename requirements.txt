@@ -1,5 +1,6 @@
 # Core libraries for NLP, deep learning, and vector search
 torch
+pdfplumber
 transformers
 sentence-transformers
 datasets
