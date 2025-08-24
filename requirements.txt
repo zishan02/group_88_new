@@ -4,7 +4,7 @@ transformers
 sentence-transformers
 datasets
 faiss-cpu  # Use faiss-gpu if you have a CUDA-enabled GPU
-
+pyarrow==20.0.0
 # Data processing and file handling
 PyMuPDF
 rank-bm25
